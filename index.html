@@ -12,6 +12,7 @@
         let computerWins = 0;
         
         let playerChoice = prompt("Make your choice! Rock, paper, or scissors?");
+        let computerChoice = '';
         
         inputCheck(playerChoice);
 
@@ -19,7 +20,7 @@
             if(playerChoice != 'rock' && playerChoice != 'paper' && playerChoice != 'scissors'){
                 inputCorrection(playerChoice)
             } else {
-                console.log('it aite');
+                computerSelection()
             }
         }
 
@@ -27,6 +28,21 @@
             playerChoice = prompt('There was an error, please choose rock, paper, or scissors? (make sure your spelling is correct)')
             return inputCheck(playerChoice);
         }
+
+        function computerSelection() {
+            let randomNumber = Math.floor(Math.random() * 3);
+
+            if (randomNumber == 0) {
+                computerChoice = 'rock';
+            } else if (computerChoice == 1) {
+                computerChoice = 'paper';
+            } else {
+                computerChoice = 'scissors';
+            }
+
+        }
+
+
  
 
     </script>
