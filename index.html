@@ -52,10 +52,32 @@
                 computerChoice = 'scissors';
             }
 
-            console.log(computerChoice);
+            game()
 
         }
 
+        function game() {
+            
+            let winner = ''
+            
+            if (playerChoice == computerChoice) {
+                winner = 'draw'
+            } else if (playerChoice == 'rock' && computerChoice == 'paper') {
+                winner = 'computer'
+            } else if (playerChoice == 'paper' && computerChoice == 'scissors') {
+                winner = 'computer'
+            } else if (playerChoice == 'scissors' && computerChoice == 'rock') {
+                winner = 'computer'
+            } else {
+                winner = 'player'
+            }
+            
+            gameResults(winner)
+        }
+
+        function gameResults(winner) {
+            
+        }
 
  
 
