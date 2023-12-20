@@ -7,23 +7,28 @@
 </head>
 <body>
     <script>
-        let gameCounter;
+        let gameCounter = 0;
         let playerWins = 0;
         let computerWins = 0;
         
-        let playerChoice = prompt('Rock, paper, or scissors?').toUpperCase();
-        let randomNumber = Math.floor(Math.random() * 3);
-        let computerChoice;
+        let playerChoice = prompt("Make your choice! Rock, paper, or scissors?");
+        
+        inputCheck(playerChoice);
 
-        if (randomNumber == 0) {
-            computerChoice = "ROCK";
-        } else if (randomNumber == 1) {
-            computerChoice = "PAPER";
-        } else {
-            computerChoice = 'SCISSORS';
+        function inputCheck(playerChoice) {
+            if(playerChoice != 'rock' && playerChoice != 'paper' && playerChoice != 'scissors'){
+                inputCorrection(playerChoice)
+            } else {
+                console.log('it aite');
+            }
         }
 
-        
+        function inputCorrection(playerChoice) {
+            playerChoice = prompt('There was an error, please choose rock, paper, or scissors? (make sure your spelling is correct)')
+            return inputCheck(playerChoice);
+        }
+ 
+
     </script>
 </body>
 </html>
