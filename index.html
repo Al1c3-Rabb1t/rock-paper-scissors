@@ -91,6 +91,8 @@
                 
                 if(newGame == true) {
                     gameReset()
+                } else {
+                    return;
                 }
 
             } else {
@@ -129,9 +131,13 @@
             }
         }
 
-        
+        function gameReset() {
+            gameCounter = 0;
+            playerWins = 0;
+            computerWins = 0;
 
- 
+            gameStart();
+        }
 
     </script>
 </body>
