@@ -80,9 +80,35 @@
             
             gameCounter += 1;
 
+            if(winner == 'player') {
+                    playerWins += 1;
+                    
+                    alert(`
+                        Game ${gameCounter}/5 complete!
+                        You won! ${playerChoice.toUpperCase()} beats ${computerChoice.toUpperCase()}
+                    `)
+                
+                } else if (winner == 'computer') {
+                    computerWins += 1;
+                    
+                    alert(`
+                        Game ${gameCounter}/5 complete!
+                        You lost! ${computerChoice.toUpperCase()} beats ${playerChoice.toUpperCase()}
+                    `)
+                
+                } else {
+                    drawNumb += 1;
+
+                    alert(`
+                        Game ${gameCounter}/5 complete
+                        It was a draw! No one wins this round.
+                    `)
+                    
+                }
+
             if(gameCounter == 5) {
                 alert(`
-                    Game ${gameCounter}/5 complete!
+                    All games complete!
                     Your score: ${playerWins}
                     Computer score: ${computerWins}
                     Draws: ${drawNumb}
@@ -98,40 +124,7 @@
                 }
 
             } else {
-                if(winner == 'player') {
-                    playerWins += 1;
-                    
-                    alert(`
-                        Game ${gameCounter}/5 complete!
-                        You won! ${playerChoice.toUpperCase()} beats ${computerChoice.toUpperCase()}
-                    
-                        Next round will begin!`)
-                    
-                    gameStart()
-                
-                } else if (winner == 'computer') {
-                    computerWins += 1;
-                    
-                    alert(`
-                        Game ${gameCounter}/5 complete!
-                        You lost! ${computerChoice.toUpperCase()} beats ${playerChoice.toUpperCase()}
-                    
-                        Next round will begin!`)
-                    
-                    gameStart()
-                
-                } else {
-                    drawNumb += 1;
-
-                    alert(`
-                        Game ${gameCounter}/5 complete
-                        It was a draw! No one wins this round.
-                    
-                        Next round will begin!`)
-                    
-                    gameStart()
-                
-                }
+                gameStart()
             }
         }
 
